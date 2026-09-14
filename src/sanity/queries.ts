@@ -1,4 +1,4 @@
-import { client } from "./client";
+import { client, projectId } from "./client";
 
 // --- HOMEPAGE QUERY ---
 export const HOMEPAGE_QUERY = `*[_type == "homePage"][0]{
@@ -149,7 +149,7 @@ export const BLOG_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0
 
 export async function fetchSanityHomePage() {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID.includes("your_sanity")) {
+    if (!projectId || projectId.includes("your_sanity")) {
       return null;
     }
     return await client.fetch(HOMEPAGE_QUERY);
@@ -161,7 +161,7 @@ export async function fetchSanityHomePage() {
 
 export async function fetchSanityAboutPage() {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID.includes("your_sanity")) {
+    if (!projectId || projectId.includes("your_sanity")) {
       return null;
     }
     return await client.fetch(ABOUT_PAGE_QUERY);
@@ -173,7 +173,7 @@ export async function fetchSanityAboutPage() {
 
 export async function fetchSanityCategories() {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID.includes("your_sanity")) {
+    if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
     return await client.fetch(CATEGORIES_QUERY);
@@ -185,7 +185,7 @@ export async function fetchSanityCategories() {
 
 export async function fetchSanityTestimonials() {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID.includes("your_sanity")) {
+    if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
     return await client.fetch(TESTIMONIALS_QUERY);
@@ -197,7 +197,7 @@ export async function fetchSanityTestimonials() {
 
 export async function fetchSanityProducts() {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID.includes("your_sanity")) {
+    if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
     return await client.fetch(PRODUCTS_QUERY);
@@ -209,7 +209,7 @@ export async function fetchSanityProducts() {
 
 export async function fetchSanityBlogs() {
   try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID.includes("your_sanity")) {
+    if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
     return await client.fetch(BLOGS_QUERY);
@@ -218,3 +218,4 @@ export async function fetchSanityBlogs() {
     return [];
   }
 }
+
