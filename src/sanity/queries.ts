@@ -152,7 +152,7 @@ export async function fetchSanityHomePage() {
     if (!projectId || projectId.includes("your_sanity")) {
       return null;
     }
-    return await client.fetch(HOMEPAGE_QUERY);
+    return await client.fetch(HOMEPAGE_QUERY, {}, { next: { revalidate: 10 } });
   } catch (error) {
     console.error("Error fetching homepage settings from Sanity:", error);
     return null;
@@ -164,7 +164,7 @@ export async function fetchSanityAboutPage() {
     if (!projectId || projectId.includes("your_sanity")) {
       return null;
     }
-    return await client.fetch(ABOUT_PAGE_QUERY);
+    return await client.fetch(ABOUT_PAGE_QUERY, {}, { next: { revalidate: 10 } });
   } catch (error) {
     console.error("Error fetching about page settings from Sanity:", error);
     return null;
@@ -176,7 +176,7 @@ export async function fetchSanityCategories() {
     if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
-    return await client.fetch(CATEGORIES_QUERY);
+    return await client.fetch(CATEGORIES_QUERY, {}, { next: { revalidate: 10 } });
   } catch (error) {
     console.error("Error fetching categories from Sanity:", error);
     return [];
@@ -188,7 +188,7 @@ export async function fetchSanityTestimonials() {
     if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
-    return await client.fetch(TESTIMONIALS_QUERY);
+    return await client.fetch(TESTIMONIALS_QUERY, {}, { next: { revalidate: 10 } });
   } catch (error) {
     console.error("Error fetching testimonials from Sanity:", error);
     return [];
@@ -200,7 +200,7 @@ export async function fetchSanityProducts() {
     if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
-    return await client.fetch(PRODUCTS_QUERY);
+    return await client.fetch(PRODUCTS_QUERY, {}, { next: { revalidate: 10 } });
   } catch (error) {
     console.error("Error fetching products from Sanity:", error);
     return [];
@@ -212,7 +212,7 @@ export async function fetchSanityBlogs() {
     if (!projectId || projectId.includes("your_sanity")) {
       return [];
     }
-    return await client.fetch(BLOGS_QUERY);
+    return await client.fetch(BLOGS_QUERY, {}, { next: { revalidate: 10 } });
   } catch (error) {
     console.error("Error fetching blogs from Sanity:", error);
     return [];
