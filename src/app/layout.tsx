@@ -40,8 +40,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Mitra Papers" }],
   creator: "Mitra Papers",
   metadataBase: new URL("https://mitrapapers.com"),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
-    title: "Mitra Papers - Stationery With Trust",
+    title: "Mitra Papers - 30+ Years of Stationery With Trust",
     description: "Quality stationery for students, artists, professionals and everyday creators — backed by 30+ years of trust in Gora Bazar, Dum Dum Cantonment.",
     url: "https://mitrapapers.com",
     siteName: "Mitra Papers",
@@ -56,9 +59,22 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mitra Papers - Stationery With Trust in Gora Bazar",
+    description: "Quality stationery, paper reams, watercolor pads, pens, and office files in Dum Dum Cantonment.",
+    images: ["/logo.jpg"],
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   verification: {
     google: "google5cdbd0aa857315ca.html",
