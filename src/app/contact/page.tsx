@@ -284,14 +284,14 @@ export default function ContactPage() {
 
         </div>
 
-        {/* Embedded Google Maps Placeholder Section */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-sage-200 shadow-card space-y-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-sage-100 pb-3">
+        {/* Embedded Google Maps Section */}
+        <div className="bg-white rounded-3xl p-4 sm:p-8 border border-sage-200 shadow-card space-y-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-sage-100 pb-4">
             <div>
-              <h3 className="text-lg font-bold font-serif text-olive-950">
+              <h3 className="text-lg sm:text-xl font-bold font-serif text-olive-950">
                 Store Location Map — Gora Bazar, Dum Dum Cantonment
               </h3>
-              <p className="text-xs text-charcoal-800">
+              <p className="text-xs sm:text-sm text-charcoal-800 mt-0.5">
                 Conveniently located for local residents, students, and businesses in Dum Dum Cantonment area, West Bengal.
               </p>
             </div>
@@ -299,27 +299,41 @@ export default function ContactPage() {
               href={STORE_INFO.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold text-olive-800 hover:underline flex items-center gap-1 shrink-0"
+              className="text-xs font-bold text-olive-800 hover:text-gold-600 transition-colors flex items-center gap-1.5 shrink-0 bg-sage-50 px-3 py-2 rounded-xl border border-sage-200"
             >
               <span>Open in Google Maps</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden bg-ivory-100 border border-sage-200 flex items-center justify-center text-center p-6">
-            <div className="space-y-2 max-w-md">
-              <MapPin className="w-10 h-10 text-olive-800 mx-auto animate-bounce" />
-              <h4 className="text-base font-bold text-olive-900">Mitra Papers Store Location</h4>
-              <p className="text-xs text-charcoal-800">
-                Gora Bazar, Dum Dum Cantonment area, West Bengal, India
-              </p>
+          <div className="relative w-full rounded-2xl overflow-hidden border border-sage-200 shadow-inner bg-ivory-100 min-h-[300px] sm:min-h-[380px] flex flex-col justify-end p-3 sm:p-6">
+            <iframe
+              title="Mitra Papers Store Location Map"
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(STORE_INFO.address.fullAddress)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
+              className="w-full h-full absolute inset-0 border-0"
+              loading="lazy"
+              allowFullScreen
+            />
+            
+            {/* Directions Floating Card Overlay */}
+            <div className="relative z-10 p-4 sm:p-5 bg-white/95 backdrop-blur-md rounded-2xl border border-sage-200 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-3 max-w-lg w-full">
+              <div className="flex items-center gap-3 text-left w-full sm:w-auto">
+                <div className="w-10 h-10 rounded-full bg-olive-800 text-gold-400 flex items-center justify-center shrink-0 shadow-sm">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs sm:text-sm font-bold text-olive-950">Mitra Papers Store Location</h4>
+                  <p className="text-[11px] text-charcoal-800">Gora Bazar, Dum Dum Cantonment, Kolkata</p>
+                </div>
+              </div>
               <a
                 href={STORE_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 text-xs font-semibold text-white bg-olive-800 rounded-full shadow-sm"
+                className="w-full sm:w-auto px-4 py-2.5 text-xs font-bold text-white bg-olive-800 hover:bg-olive-900 rounded-xl shadow-md transition-colors text-center flex items-center justify-center gap-2 shrink-0"
               >
-                Navigate via Google Maps
+                <MapPin className="w-3.5 h-3.5 text-gold-400" />
+                <span>Navigate via Google Maps</span>
               </a>
             </div>
           </div>

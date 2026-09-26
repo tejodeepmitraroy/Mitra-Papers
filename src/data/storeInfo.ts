@@ -19,5 +19,12 @@ export const STORE_INFO = {
     hours: "11:00 AM - 3:00 PM & 6:00 PM - 11:00 PM (Mon - Sun)",
   },
   googleMapsUrl: "https://maps.google.com/?q=Mitra+Papers,+62/2,+Manujendra+Dutta+Rd,+Mahendra+Colony,+Gora+Bazar,+Rajbari,+Dum+Dum,+Kolkata,+North+Dumdum,+West+Bengal+700028",
+  socialLinks: {
+    facebook: "https://www.facebook.com/profile.php?id=61594708191831#",
+    instagram: "https://www.instagram.com/mitrapapersofficial/",
+    youtube: "https://youtube.com/@mitrapapers",
+    linkedin: "https://linkedin.com/company/mitrapapers",
+    linktree: "https://linktr.ee/mitrapapers",
+  },
 };
 

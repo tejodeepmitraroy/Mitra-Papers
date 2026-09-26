@@ -28,7 +28,7 @@ export default function FloatingCallButtons() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 group">
+    <div className="fixed bottom-5 right-5 z-30 flex flex-col items-end gap-3 group">
       
       {/* Optional helper tooltip badge */}
       {showTooltip && (

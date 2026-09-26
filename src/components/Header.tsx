@@ -184,20 +184,6 @@ export default function Header() {
                   );
                 })}
               </nav>
-
-              {/* Store Motto & Trust Card */}
-              <div className="mt-8 p-4 rounded-xl bg-sage-100/70 border border-sage-200">
-                <div className="flex items-center gap-2 text-olive-800 font-bold text-xs">
-                  <span className="w-2 h-2 rounded-full bg-gold-500 animate-pulse" />
-                  <span>30+ Years Legacy</span>
-                </div>
-                <p className="text-xs text-olive-900 mt-1 italic font-serif">
-                  "Stationery With Trust"
-                </p>
-                <p className="text-[11px] text-charcoal-800 mt-1">
-                  Serving students, artists & offices in Gora Bazar, Dum Dum Cantonment.
-                </p>
-              </div>
             </div>
 
             {/* Mobile CTAs */}
